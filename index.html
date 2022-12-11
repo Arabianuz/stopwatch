@@ -9,19 +9,21 @@
     <link rel="icon" href="logo.png"/>
     <link rel="stylesheet" href="assets/bootstrap5/node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body style="background-color:royalblue;">
 
     <section id="stopwatch_container" class="container">
-       <h1>Stopwatch</h1>
-       <div class="container bg-primary display-3 p-auto text-center">
+       <h1 class="text-center text-white display-1 mt-4 mb-4">Stopwatch:</h1>
+       <div class="col-8 m-auto border rounded px-2 py-3 bg-light">
+       <div class="container bg-white border rounded display-2 p-auto text-center justify-content-center">
         <strong id="mins">00<b>min:</b></strong>
         <strong id="seconds">00<b>s:</b></strong>
         <strong id="milli_seconds">000<b>ms</b></strong>
        </div>
-       <div class="container text-center my-2">
-       <button type="button" class="btn btn-primary" id="start_button">Start</button>
-       <button type="button" class="btn btn-danger" id="stop_button" disabled>Stop</button>
-       <button type="button" class="btn btn-warning" id="reset_button" disabled>Reset</button>
+       <div class="container text-center mt-4 ">
+       <button type="button" class="btn btn-primary me-5" id="start_button">Start</button>
+       <button type="button" class="btn btn-danger mx-5" id="stop_button" disabled>Stop</button>
+       <button type="button" class="btn btn-warning ms-5" id="reset_button" disabled>Reset</button>
+       </div>
        </div>
 
     </section>

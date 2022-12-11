@@ -25,6 +25,7 @@ stopBtn.addEventListener('click', function() {
     resetBtn.removeAttribute('disabled');
     startBtn.removeAttribute('disabled');
     startBtn.innerText = 'Resume';
+    stopBtn.setAttribute('disabled', '')
     });
 resetBtn.addEventListener('click', function(){
     startBtn.innerText = 'Start';
@@ -36,19 +37,20 @@ resetBtn.addEventListener('click', function(){
     mincount = 0;
     seconds = '00<strong>s:</strong>';
     milli_second = '000<strong>ms</strong>';
-    mins
+    mins ='00' + '<strong>min:</strong>';
     document.getElementById('milli_seconds').innerHTML = milli_second;
     document.getElementById('seconds').innerHTML = seconds;
+    document.getElementById('mins').innerHTML = mins;
 });
 
 
-setInterval(start, 1);
+setInterval(start, 10);
 function start() {
    let milli_second;
    let seconds;
    let mins;
    if (conditionbtn) {
-       mscount++;
+       mscount+=10;
        if (mscount < 10){
           milli_second = '00' + mscount + '<strong>ms</strong>';
           document.getElementById('milli_seconds').innerHTML = milli_second;
@@ -84,16 +86,16 @@ function start() {
         scount = 0;
        }
        else if (mincount < 10) {
-        mins = '0' + mincount + '<strong>h:</strong>';
+        mins = '0' + mincount + '<strong>min:</strong>';
         document.getElementById('mins').innerHTML = mins;
        }
        else if (mincount < 60 && mincount >= 10){
-        mins = mincount + '<strong>h:</strong>';
+        mins = mincount + '<strong>min:</strong>';
         document.getElementById('mins').innerHTML = mins;
        }
        else {
         mincount = 0;
-        mins = '00' + '<strong>h:</strong>';
+        mins = '00' + '<strong>min:</strong>';
         document.getElementById('mins').innerHTML = mins;
        }
 
