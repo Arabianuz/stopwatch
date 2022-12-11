@@ -6,21 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="logo.png" />
+    <link rel="icon" href="logo.png"/>
+    <link rel="stylesheet" href="assets/bootstrap5/node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <section id="heading_container">
-        <img src="logo.png" id="skillreactor_logo" alt="logo" 
-          width="100px" height="50px">
-        <h1 id="heading">Skillreactor Stopwatch</h1>
-    </section>
-    <section id="stopwatch_container">
+
+    <section id="stopwatch_container" class="container">
        <h1>Stopwatch</h1>
-       <p>stopwatch: <strong id="seconds">00,</strong><strong id="milli_seconds">000</strong></p>
-       <button id="start_button">Start</button>
-       <button id="stop_button">Stop</button>
-       <button id="reset_button">Reset</button>
+       <div class="container bg-primary display-3 p-auto text-center">
+        <strong id="hours">00<b>min:</b></strong>
+        <strong id="seconds">00<b>s:</b></strong>
+        <strong id="milli_seconds">000<b>ms</b></strong>
+       </div>
+       <div class="container text-center my-2">
+       <button type="button" class="btn btn-primary" id="start_button">Start</button>
+       <button type="button" class="btn btn-danger" id="stop_button" disabled>Stop</button>
+       <button type="button" class="btn btn-warning" id="reset_button" disabled>Reset</button>
+       </div>
+
     </section>
 </body>
+<script src="assets/bootstrap5/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap5/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/bootstrap5/node_modules/@popperjs/core/dist/umd/popper.js"></script>
 <script src="stopwatch.js"></script>
 </html>
