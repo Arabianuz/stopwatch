@@ -8,6 +8,7 @@ let conditionbtn = false;
 
 let mscount = 0;
 let scount = 0;
+let mincount = 0;
 
 
 startBtn.addEventListener('click', function() {
@@ -32,8 +33,10 @@ resetBtn.addEventListener('click', function(){
     conditionbtn = false;
     mscount = 0;
     scount = 0;
+    mincount = 0;
     seconds = '00<strong>s:</strong>';
     milli_second = '000<strong>ms</strong>';
+    mins
     document.getElementById('milli_seconds').innerHTML = milli_second;
     document.getElementById('seconds').innerHTML = seconds;
 });
@@ -43,6 +46,7 @@ setInterval(start, 1);
 function start() {
    let milli_second;
    let seconds;
+   let mins;
    if (conditionbtn) {
        mscount++;
        if (mscount < 10){
@@ -72,9 +76,25 @@ function start() {
         document.getElementById('seconds').innerHTML = seconds;
        }
        else {
-        scount = 0;
         seconds = '00<strong>s:</strong>';
         document.getElementById('seconds').innerHTML = seconds;
+       }
+       if (scount == 60) {
+        mincount++
+        scount = 0;
+       }
+       else if (mincount < 10) {
+        mins = '0' + mincount + '<strong>h:</strong>';
+        document.getElementById('mins').innerHTML = mins;
+       }
+       else if (mincount < 60 && mincount >= 10){
+        mins = mincount + '<strong>h:</strong>';
+        document.getElementById('mins').innerHTML = mins;
+       }
+       else {
+        mincount = 0;
+        mins = '00' + '<strong>h:</strong>';
+        document.getElementById('mins').innerHTML = mins;
        }
 
     }
